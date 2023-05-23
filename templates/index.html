@@ -1,5 +1,5 @@
 {% load static %}
-{% static "images" as baseUrl %}
+{% static 'img/destination' as baseUrl %}
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -244,9 +244,11 @@
                     <div class="single_place">
                         <div class="thumb">
                             <img src="{{baseUrl}}/{{dest.img}}" alt="">
+                            {% if dest.offer %}
                             <div class="spec_offer text-center "> <a href="#">Special Offer</a>
                             </div>
-                            <a href="#" class="prise">${{dest.price}}</a>
+                            {% endif %}
+                            <a href="#" class="price">${{dest.price}}</a>
                         </div>
                         <div class="place_info">
                             <a href="destination_details.html"><h3>{{dest.name}}</h3></a>
